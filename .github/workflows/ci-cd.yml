@@ -27,32 +27,18 @@ jobs:
 
     - name: Run Lint/Tests
       run: npm test
-    
-    # Upload dos relatórios de testes como artifacts
-    - name: Upload Test Logs
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-logs
-        path: tests/output/ # Substitua pelo diretório onde os logs são gerados
 
+    # Build the application
     - name: Build Application
-      run: |
-        echo "Build process goes here."
-        npm run build
+      run: npm run build
+
+    # Verifique se a pasta dist/ foi gerada corretamente
+    - name: List Build Directory
+      run: ls -alh dist/
 
     # Upload do build como artifact
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v3
       with:
         name: application-build
-        path: dist/ # Substitua pelo diretório onde o build é gerado
-
-    # Upload de arquivos adicionais
-    - name: Upload Configuration Files
-      uses: actions/upload-artifact@v3
-      with:
-        name: config-files
-        path: |
-          package.json
-          .env
-          
+        path: dist/
