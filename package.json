@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "build": "echo 'Build step simulated. No actual build process required.'",
-    "test": "echo \"No tests yet\" && exit 0"
+    "test": "echo \"No tests yet\" && exit 0",
+    "build": "cp -r src dist"  // Copiar os arquivos de src para dist
   },
   "dependencies": {
     "express": "^4.18.4"
