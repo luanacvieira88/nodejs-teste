@@ -7,7 +7,7 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "test": "echo \"No tests yet\" && exit 0",
-    "build": "cp -r src dist"  // Copiar os arquivos de src para dist
+    "build": "cp -r src dist" 
   },
   "dependencies": {
     "express": "^4.18.4"
